@@ -1,5 +1,5 @@
 #include "Methods/RmsProp/RmsProp.h"
-//#include "Tools/Parameters.h"
+
 
 //IterationData RmsProp(Function f, Vector startPoint, Vector parameters, Real grad_accuracy, int iter_lim) {
 IterationData RmsProp(Function f, Vector startPoint, const StopCondition& stop_condition) {
@@ -8,7 +8,7 @@ IterationData RmsProp(Function f, Vector startPoint, const StopCondition& stop_c
   data.x_curr = startPoint;
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
-
+  Params par;
   Vector x_next;
 
   // Градиент и его покомпонентный квадрат
@@ -23,8 +23,8 @@ IterationData RmsProp(Function f, Vector startPoint, const StopCondition& stop_c
   Real alpha;
   Real grad_accuracy;
 
-  beta = 0.93005474;//parameters[0];
-  alpha = 0.06376147;//parameters[1];
+  beta = par.RmsProp_beta;//parameters[0];
+  alpha = par.RmsProp_alpha;//parameters[1];
   grad_accuracy = 0.00000001;
 
   g = grad(f, data.x_curr, grad_accuracy);

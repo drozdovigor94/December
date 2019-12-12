@@ -1,8 +1,6 @@
 /* Adaptive Gradient */
 #include "Methods/Adagrad/Adagrad.h"
 
-//#include "Parameters.hpp"
-
 IterationData Adagrad(Function f, Vector startPoint, const StopCondition& stop_condition) {
 
   IterationData data;
@@ -10,8 +8,9 @@ IterationData Adagrad(Function f, Vector startPoint, const StopCondition& stop_c
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
   data.method_title = "Adardad";
+  Params par;
 
-
+//  Params p;
   Vector x_next;
   // Вектор-градиент и его покомпонентный квадрат
   Vector g, gd;
@@ -25,7 +24,7 @@ IterationData Adagrad(Function f, Vector startPoint, const StopCondition& stop_c
   Real grad_accuracy;
   //beta = parameters[0];
 
-  beta = 1.0;  //0.9
+  beta = par.Adagrad_beta;//1.0;  //0.9
   grad_accuracy = 0.00000001;
 
   g = grad(f, data.x_curr, grad_accuracy);

@@ -4,6 +4,7 @@
 //#include "Data.h"
 #include "Tools/math.hpp"
 #include "Tools/StopCondition.hpp"
+#include "../../Tools/Parameters.hpp"
 
 /**
  *

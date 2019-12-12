@@ -7,10 +7,10 @@ IterationData nesterov(Function f, Vector startingPoint, const StopCondition& st
 // startingPoint - начальное приближение
 // stop_condition - критерий остановы
 // Результат работы метода будет лежать в структуре данных о последней итерации
-
-    Real ro = 2.0;
-	Real teta = 1.1;
-	Real alfa = 1.0;
+	Params par;
+    Real ro = par.Nesterov_ro;
+	Real teta = par.Nesterov_teta;
+	Real alfa = par.Nesterov_alfa;
 
 	Vector v = startingPoint;
 	Vector x = startingPoint;

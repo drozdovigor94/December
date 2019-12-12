@@ -21,5 +21,3 @@ void IterationData::next(const Vector& x_next, const Real f_next) {
 bool default_stop_condition(const IterationData& data) {
     return data.iter_counter >= 100 || std::abs(data.f_curr - data.f_prev) < 1e-8;
 }
-
-

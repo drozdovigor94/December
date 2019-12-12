@@ -2,6 +2,7 @@
 
 #include "Tools/math.hpp"
 #include "Tools/StopCondition.hpp"
+#include "../../Tools/Parameters.hpp"
 
 // Метод Нестерова (возвращается результат - точка минимума и количество сделанных итераций)
 // Авторы: Петрухина Светлана, Кулага Иван

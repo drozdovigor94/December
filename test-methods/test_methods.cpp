@@ -1,3 +1,4 @@
+#include "../include/Tools/Parameters.hpp"
 #include "Methods/hessian_free/hessian_free.hpp"
 #include "Methods/nesterov/nesterov.hpp"
 #include "Methods/bfgs/bfgs.hpp"
@@ -22,7 +23,7 @@
     Автор: Юрий Кондратов
 */
 
-typedef IterationData(*Method)(Function, Vector, const StopCondition&);
+//typedef IterationData(*Method)(Function, Vector, Params*, const StopCondition&);
 
 std::ofstream fout_txt;
 
@@ -1542,7 +1543,7 @@ int main() {
     fout_txt << "BFGS_2 method:\n\n";
     Test(bfgs2);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start DFP Method Tests. Results in test_dfp.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1598,7 +1599,7 @@ int main() {
     fout_txt << "Nesterov method:\n\n";
     Test(nesterov);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start AdaMax Method Tests. Results in AdaMax.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1606,7 +1607,7 @@ int main() {
     fout_txt << "AdaMax method:\n\n";
     Test(AdaMax);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start Adam Method Tests. Results in Adam.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1614,7 +1615,7 @@ int main() {
     fout_txt << "Adam method:\n\n";
     Test(Adam);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start AdamW Method Tests. Results in AdamW.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1622,7 +1623,7 @@ int main() {
     fout_txt << "AdamW method:\n\n";
     Test(AdamW);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start AMSGrad Method Tests. Results in AMSGrad.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1630,7 +1631,7 @@ int main() {
     fout_txt << "AMSGrad method:\n\n";
     Test(AMSGrad);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start Adagrad Method Tests. Results in Adagrad.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1638,7 +1639,7 @@ int main() {
     fout_txt << "Adagrad method:\n\n";
     Test(Adagrad);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start Adadelta Method Tests. Results in Adadelta.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1646,7 +1647,7 @@ int main() {
     fout_txt << "Adadelta method:\n\n";
     Test(Adadelta);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start Nadam Method Tests. Results in Nadam.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1654,7 +1655,7 @@ int main() {
     fout_txt << "Nadam method:\n\n";
     Test(Nadam);
     fout_txt.close();
-
+	
     std::cout << std::endl;
     std::cout << "-- Start RmsProp Method Tests. Results in RmsProp.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1662,12 +1663,11 @@ int main() {
     fout_txt << "RmsProp method:\n\n";
     Test(RmsProp);
     fout_txt.close();
-
+	
 
     std::cout << std::endl;
     std::cout << "-- Finish testing... The results are written to a files:\n";
     std::cout << "\t * test_bfgs.txt\n";
-
     std::cout << "\t * test_bfgs2.txt\n";
     std::cout << "\t * test_dfp.txt\n";
     std::cout << "\t * test_dfp2.txt\n";

@@ -1,14 +1,12 @@
 ﻿#include "Methods/Adadelta/Adadelta.h"
 
-//#include "Parameters.h"
-
 IterationData Adadelta(Function f, Vector startPoint, const StopCondition& stop_condition) {
 
 	IterationData data;
 	data.x_curr = startPoint;
 	data.f_curr = f(startPoint);
 	data.iter_counter = 0;
-
+	Params par;
 	// Возможная точка мимнимума
 	Vector x_next;
 
@@ -29,7 +27,7 @@ IterationData Adadelta(Function f, Vector startPoint, const StopCondition& stop_
 	Vector s;
 
 
-	beta = 0.999;
+	beta = par.Adadelta_beta;
 
 	for (int i = 0;i < (int)startPoint.size();i++) {
 		s.push_back(0.0);

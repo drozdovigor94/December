@@ -1,5 +1,4 @@
 #include "Methods/Adam/Adam.h"
-//#include "Tools/Parameters.h"
 
 IterationData Adam(Function f, Vector startPoint, const StopCondition& stop_condition) {
 
@@ -10,7 +9,8 @@ IterationData Adam(Function f, Vector startPoint, const StopCondition& stop_cond
   data.x_curr = startPoint;
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
-
+  Params par;
+  
   Vector x_next;
   // Вектор-градиент и его покомпонентный квадрат
   Vector g, gd;
@@ -29,9 +29,9 @@ IterationData Adam(Function f, Vector startPoint, const StopCondition& stop_cond
 
   /* Присвоение соответствующих параметров из структуры параметров */
 
-  beta1 = 0.86296943;//Adam_beta1 = 0.86296943;//0.9
-  beta2 = 0.88791641;//Adam_beta2 = 0.88791641;//0.999
-  gamma = 0.07670128;//Adam_gamma = 0.07670128;//0.00000001
+  beta1 = par.Adam_beta1;//Adam_beta1 = 0.86296943;//0.9
+  beta2 = par.Adam_beta2;//Adam_beta2 = 0.88791641;//0.999
+  gamma = par.Adam_gamma;//Adam_gamma = 0.07670128;//0.00000001
 
 
   g = grad(f, data.x_curr, grad_accuracy);

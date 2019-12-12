@@ -1,5 +1,5 @@
 #include "Methods/AdaMax/AdaMax.h"
-//#include "Tools/Parameters.h"
+
 
 //IterationData AdaMax(Function f, Vector startPoint, Vector parameters, Real grad_accuracy, int iter_lim) {
 IterationData AdaMax(Function f, Vector startPoint, const StopCondition& stop_condition) {
@@ -11,7 +11,7 @@ IterationData AdaMax(Function f, Vector startPoint, const StopCondition& stop_co
   data.x_curr = startPoint;
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
-
+  Params par;
   Vector x_next;
 
   // Вектор-градиент
@@ -40,9 +40,9 @@ IterationData AdaMax(Function f, Vector startPoint, const StopCondition& stop_co
   /*//before: beta1 = parameters[0];beta2 = parameters[1];gamma = parameters[2];*/
 
   /* Авторы Adam предлагаю эти значения по умолчанию*/
-  beta1 = 0.92096770;//AdaMax_beta1 = 0.92096770;	//0.9
-  beta2 = 0.95563197;//AdaMax_beta2 = 0.95563197;	//0.999
-  gamma = 0.18211471;//AdaMax_gamma = 0.18211471;	//0.00000001
+  beta1 = par.AdaMax_beta1;//AdaMax_beta1 = 0.92096770;	//0.9
+  beta2 = par.AdaMax_beta2;//AdaMax_beta2 = 0.95563197;	//0.999
+  gamma = par.AdaMax_gamma;//AdaMax_gamma = 0.18211471;	//0.00000001
 
   g = grad(f, data.x_curr, grad_accuracy);
   m = (1 - beta1) * g;

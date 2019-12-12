@@ -1,7 +1,5 @@
 #include "Methods/AMSGrad/AMSGrad.h"
 
-//#include "Tools/Parameters.h"
-
 //IterationData AMSGrad(Function f, Vector startPoint, Vector parameters, Real grad_accuracy, int iter_lim) {
 IterationData AMSGrad(Function f, Vector startPoint, const StopCondition& stop_condition) {
 
@@ -12,6 +10,7 @@ IterationData AMSGrad(Function f, Vector startPoint, const StopCondition& stop_c
   data.x_curr = startPoint;
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
+  Params par;
 
   Vector x_next;
   // Вектор-градиент и его покомпонентный квадрат
@@ -31,9 +30,9 @@ IterationData AMSGrad(Function f, Vector startPoint, const StopCondition& stop_c
 
   /* Присвоение соответствующих параметров из структуры параметров */
 
-  beta1 = 0.86296943;//Adam_beta1 = 0.86296943;//0.9
-  beta2 = 0.88791641;//Adam_beta2 = 0.88791641;//0.999
-  gamma = 0.07670128;//Adam_gamma = 0.07670128;//0.00000001
+  beta1 = par.AdaMax_beta1;// = 0.86296943;//0.9
+  beta2 = par.AdaMax_beta2;// = 0.88791641;//0.999
+  gamma = par.AdaMax_gamma;// = 0.07670128;//0.00000001
 
 
   g = grad(f, data.x_curr, grad_accuracy);

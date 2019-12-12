@@ -1,5 +1,4 @@
 #include "Methods/Nadam/Nadam.h"
-//#include "Tools/Parameters.h"
 
 IterationData Nadam(Function f, Vector startPoint, const StopCondition& stop_condition) {
   Real grad_accuracy = 0.00000001;
@@ -8,6 +7,7 @@ IterationData Nadam(Function f, Vector startPoint, const StopCondition& stop_con
   data.x_curr = startPoint;
   data.f_curr = f(startPoint);
   data.iter_counter = 0;
+  Params par;
 
   Vector x_next;
   // Вектор-градиент и его покомпонентный квадрат
@@ -29,9 +29,9 @@ IterationData Nadam(Function f, Vector startPoint, const StopCondition& stop_con
 
   /* Присвоение соответствующих параметров из структуры параметров */
 
-  beta1 = 0.88441989;
-  beta2 = 0.88441989;
-  gamma = 0.08381000;
+  beta1 = par.Nadam_beta1;
+  beta2 = par.Nadam_beta2;
+  gamma = par.Nadam_gamma;
 
 
   g = grad(f, data.x_curr, grad_accuracy);
