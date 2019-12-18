@@ -27,6 +27,7 @@ See Annushka instead.
 14. AMSGrad
 15. Nadam
 16. RmsProp
+17. AdamW
 
 Предусмотрено тестирование методов как отдельное, так и в сравнении друг с другом. Программа тестирования отдельно методов BFGS, Hessian Free, Nesterov, DFP и Powell расположена в директории test-methods.
 
