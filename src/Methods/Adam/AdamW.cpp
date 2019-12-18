@@ -30,9 +30,9 @@ IterationData AdamW(Function f, Vector startPoint, const StopCondition& stop_con
 
   /* Присвоение соответствующих параметров из структуры параметров */
 
-  beta1 = par.Adam_beta1;//Adam_beta1 = 0.86296943;//0.9
-  beta2 = par.Adam_beta2;//Adam_beta2 = 0.88791641;//0.999
-  gamma = par.Adam_gamma;//Adam_gamma = 0.07670128;//0.00000001
+  beta1 = par.AdamW_beta1;//Adam_beta1 = 0.86296943;//0.9
+  beta2 = par.AdamW_beta2;//Adam_beta2 = 0.88791641;//0.999
+  gamma = par.AdamW_gamma;//Adam_gamma = 0.07670128;//0.00000001
 
 
   g = grad(f, data.x_curr, grad_accuracy);
