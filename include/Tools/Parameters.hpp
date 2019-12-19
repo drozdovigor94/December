@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Data.h"
+#include "math.hpp"
 
 typedef struct Parameters
 {
