@@ -28,8 +28,8 @@ public:
     ~Functions();
 protected:
     static Real f1(const Vector& x) { return 1 + x[0] + x[1] - x[0] * x[1] + x[0] * x[0] + x[1] * x[1];}
-    
-    
+
+
     static Real f2(const Vector& x) {
         return 1 + 7 * x[0] + 5 * x[1] + 0.5 * x[0] * x[1] + 3 * x[0] * x[0] + x[1] * x[1];
     }
@@ -409,7 +409,7 @@ protected:
         }
         return fun;
     }
-    
+
 };
 
 
@@ -504,7 +504,7 @@ private:
         test_method(method, f1, example_stop_condition, start_points, expected);
     }
 
-    
+
     static void test2(Method method) {
         auto expected = std::vector<ControlPoint>{{{Real(-46) / 47, Real(-106) / 47}, "Global Min"}};
         auto start_points = gen_start_points(2, -5, 5);
@@ -898,7 +898,7 @@ private:
 
     static void test31(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{5, 32}, "Global Min"}
+            {{0.9879, 0.9516}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -5, 5);
         fout_txt << "----------------------------------- Тест 31 ----------------------------------\n\n";
@@ -909,7 +909,7 @@ private:
 
     static void test31_1(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{0, 12}, "Global Min"}
+            {{0.9879, 0.9516}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -1, 13);
         fout_txt << "----------------------------------- Тест 31_1 ----------------------------------\n\n";
@@ -920,7 +920,7 @@ private:
 
     static void test31_2(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{0, 12}, "Global Min"}
+            {{0.9879, 0.9516}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -7, 21);
         fout_txt << "----------------------------------- Тест 31_2 ----------------------------------\n\n";
@@ -931,7 +931,7 @@ private:
 
     static void test31_3(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{0, 3}, "Global Min"}
+            {{0.9879, 0.9516}, "Global Min"}
         };
          auto start_points = gen_start_points(2, 8, 31);
         fout_txt << "----------------------------------- Тест 31_3 ----------------------------------\n\n";
@@ -942,7 +942,7 @@ private:
 
     static void test31_4(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{3, 6}, "Global Min"}
+            {{0.9879, 0.9516}, "Global Min"}
         };
          auto start_points = gen_start_points(2, 12, 21);
         fout_txt << "----------------------------------- Тест 31_4 ----------------------------------\n\n";
@@ -953,7 +953,7 @@ private:
 
     static void test32(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{-1.004, 1.008}, "Global Min"}
+            {{1.00303282, 1.00614391}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -5, 5);
         fout_txt << "----------------------------------- Тест 32 ----------------------------------\n\n";
@@ -964,7 +964,7 @@ private:
 
     static void test32_1(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{-1.004, 1.008}, "Global Min"}
+            {{1.00303282, 1.00614391}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -1, 13);
         fout_txt << "----------------------------------- Тест 32_1 ----------------------------------\n\n";
@@ -975,7 +975,7 @@ private:
 
     static void test32_2(Method method) {
         auto expected = std::vector<ControlPoint>{
-            {{-1.004, 1.008}, "Global Min"}
+            {{1.00303282, 1.00614391}, "Global Min"}
         };
          auto start_points = gen_start_points(2, -12, 5);
         fout_txt << "----------------------------------- Тест 32_2 ----------------------------------\n\n";
@@ -1018,7 +1018,7 @@ private:
     }
 
     static void test36(Method method) {
-        auto expected = std::vector<ControlPoint>{{{2, 10}, "Global Min"}};
+        auto expected = std::vector<ControlPoint>{{{-3.6887, -4.6887}, "Global Min"}};
         auto start_points = gen_start_points(2, -10, 2);
         fout_txt << "----------------------------------- Тест 36 -----------------------------------\n\n";
         fout_txt << "36. Гладкая функция: f(x,y) = sin(x)+y+(x-y)^2-15*x+2.5*y+1, имеющая единственный глобальный минимум. \nПодробнее в документе \"Тестовые функции\"\n\n";
@@ -1064,7 +1064,7 @@ private:
     }
 
     static void test40(Method method) {
-        auto expected = std::vector<ControlPoint>{{{-3.2, 12.53}, "Global Min"}};
+        auto expected = std::vector<ControlPoint>{{{-3.19, 12.526}, "Global Min"}};
         auto start_points = Matrix{{-2, -2},{-2, 11},{10, -2},{10, 10}};
         fout_txt << "----------------------------------- Тест 40 -----------------------------------\n\n";
         fout_txt << "40. Гладкая функция:\n\tf(x,y) = (-1.275*x1^2/M_PI^2+5*x1/M_PI+x2-6)^2 + (10-5/(4*M_PI))*cos(x1)*cos(x2)+log(x1^2+x2^2+1)+10, имеющая единственный глобальный минимум. \nПодробнее в документе \"Тестовые функции\"\n\n";
@@ -1169,7 +1169,7 @@ private:
     }
 
     static void test51(Method method) {
-        auto expected = std::vector<ControlPoint>{{{0, -1}, "Global Min"},{{ 4.0/5,  1.0/5}, "Local Max"},{{-3.0/5, -2.0/5}, "Local Min"},{{ 6.0/5,  4.0/5}, "Local Min"},{{ 9.0/5,  1.0/5}, "Local Min"}};
+        auto expected = std::vector<ControlPoint>{{{0, -1}, "Global Min"},{{ 1.0/4,  -1.0/8}, "Local Max"},{{-3.0/5, -2.0/5}, "Local Min"},{{ 6.0/5,  4.0/5}, "Local Min"},{{ 9.0/5,  1.0/5}, "Local Min"}};
         auto start_points = Matrix{{1, 1},{0.25, -0.125},{0.5, -1.5},{0, -1.2}};
         fout_txt << "----------------------------------- Тест 51 -----------------------------------\n\n";
         fout_txt << "51. Гладкая функция Голдштейна-Прайса:\n\tf(x,y) = [1+(x+y+1)^2(19-14x+3x^2-14y+6xy+3y^2)][30+(2x-3y)^2(18-32x+12x^2+48y-36xy+27y^2)], имеющая единственный глобальный минимум. \nПодробнее в документе \"Тестовые функции\"\n\n";
@@ -1178,7 +1178,7 @@ private:
     }
 
     static void test52(Method method) {
-        auto expected = std::vector<ControlPoint>{{{-12.5845, 1.342}, "Global Min"}, {{ -4.3188,  0.11015}, "Local Min"}, {{ -1.071798, 0.011488}, "Local Min"}};
+        auto expected = std::vector<ControlPoint>{{{-12.5845, 1.342}, "Global Min"}, {{ -4.6835,  0.21938}, "Local Min"}, {{ -1.071798, 0.011488}, "Local Min"}};
         auto start_points = Matrix{{-15, -3},{-15,  3},{ -5, -3},{ -5,  3}};
         fout_txt << "----------------------------------- Тест 52 -----------------------------------\n\n";
         fout_txt << "52. Гладкая функция:\n\tf(x1, ..., xn) =  100*sqrt(|y-0.01*x^2|)+0.01|x+10|, имеющая единственный глобальный минимум. \nПодробнее в документе \"Тестовые функции\"\n\n";
@@ -1203,7 +1203,7 @@ private:
         fout_txt << "Условие остановы: iter_counter >= 100 || |f_i-f_(i-1)| < 0.00000001\n\n";
         test_method(method, f53, example_stop_condition, start_points, expected);
     }
-    
+
     static void test53_2(Method method) {
         auto expected = std::vector<ControlPoint>{{{0, 0, 0, 0, 0, 0, 0, 0}, "Global Min"}};
         auto start_points = gen_start_points(8, -1, 1);
@@ -1403,16 +1403,16 @@ private:
         test_method(method, f63, example_stop_condition, start_points, expected);
     }
 
-    
+
 public:
 
     Tests();
-    
+
     static void Test(Method method) {
-        
+
         test1(method); std::cout << "1"; std::cout.flush(); fout_txt.flush();
 
-        
+
         test2  (method);    std::cout << ", 2";   std::cout.flush();  fout_txt.flush();
         test3  (method);    std::cout << ", 3";   std::cout.flush();  fout_txt.flush();
         test4  (method);    std::cout << ", 4";   std::cout.flush();  fout_txt.flush();
@@ -1509,12 +1509,12 @@ public:
         test63(method);  std::cout << ", 63"; std::cout.flush();  fout_txt.flush();
         test63_1(method);  std::cout << ", 63_1"; std::cout.flush();  fout_txt.flush();
         test63_2(method);  std::cout << ", 63_2"; std::cout.flush();  fout_txt.flush();
-        
+
         std::cout << std::endl;
     }
 
     ~Tests();
-        
+
 };
 
 int main() {
@@ -1534,7 +1534,7 @@ int main() {
     fout_txt << "BFGS_2 method:\n\n";
     Tests::Test(bfgs2);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start DFP Method Tests. Results in test_dfp.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1590,7 +1590,7 @@ int main() {
     fout_txt << "Nesterov method:\n\n";
     Tests::Test(nesterov);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start AdaMax Method Tests. Results in AdaMax.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1598,7 +1598,7 @@ int main() {
     fout_txt << "AdaMax method:\n\n";
     Tests::Test(AdaMax);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start Adam Method Tests. Results in Adam.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1606,7 +1606,7 @@ int main() {
     fout_txt << "Adam method:\n\n";
     Tests::Test(Adam);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start AdamW Method Tests. Results in AdamW.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1614,7 +1614,7 @@ int main() {
     fout_txt << "AdamW method:\n\n";
     Tests::Test(AdamW);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start AMSGrad Method Tests. Results in AMSGrad.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1622,7 +1622,7 @@ int main() {
     fout_txt << "AMSGrad method:\n\n";
     Tests::Test(AMSGrad);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start Adagrad Method Tests. Results in Adagrad.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1630,7 +1630,7 @@ int main() {
     fout_txt << "Adagrad method:\n\n";
     Tests::Test(Adagrad);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start Adadelta Method Tests. Results in Adadelta.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1638,7 +1638,7 @@ int main() {
     fout_txt << "Adadelta method:\n\n";
     Tests::Test(Adadelta);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start Nadam Method Tests. Results in Nadam.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1646,7 +1646,7 @@ int main() {
     fout_txt << "Nadam method:\n\n";
     Tests::Test(Nadam);
     fout_txt.close();
-    
+
     std::cout << std::endl;
     std::cout << "-- Start RmsProp Method Tests. Results in RmsProp.txt" << std::endl;
     std::cout << "-- Tests: ";
@@ -1654,7 +1654,7 @@ int main() {
     fout_txt << "RmsProp method:\n\n";
     Tests::Test(RmsProp);
     fout_txt.close();
-    
+
 
     std::cout << std::endl;
     std::cout << "-- Finish testing... The results are written to a files:\n";
@@ -1675,7 +1675,7 @@ int main() {
     std::cout << "\t * test_Adadelta.txt\n";
     std::cout << "\t * test_Nadam.txt\n";
     std::cout << "\t * test_RmsProp.txt\n";
-  
+
 
     std::cin.get();
     return 0;
@@ -1683,6 +1683,6 @@ int main() {
     //std::cout << std::endl;
     //std::cout << "-- Finish testing... The results are written to a files:\n";
     //std::cout << "\t * test_bfgs.txt\n";
-  
+
     //return 0;
 }

@@ -4,14 +4,14 @@
 
 typedef struct Parameters
 {
-	Real Adam_beta1 = 0.8, Adam_beta2 = 0.55, Adam_gamma = 0.337;
-	Real AdamW_beta1 = 0.91, AdamW_beta2 = 0.85, AdamW_gamma = 0.01;
-	Real RmsProp_beta = 0.55, RmsProp_alpha = 0.75;
-	Real Adagrad_beta = 0.94;
-	Real AdaMax_beta1 = 0.94, AdaMax_beta2 = 0.94, AdaMax_gamma = 0.337;
-	Real Adadelta_beta = 0.55;
-	Real Nadam_beta1 = 0.55, Nadam_beta2 = 0.74, Nadam_gamma = 0.337;
-	Real AMSGrad_beta1 = 0.89, AMSGrad_beta2 = 0.98, AMSGrad_gamma = 0.01;
+	Real Adam_beta1 = 0.5, Adam_beta2 = 0.51, Adam_gamma = 0.337;
+	Real AdamW_beta1 = 0.5, AdamW_beta2 = 0.97, AdamW_gamma = 0.2;
+	Real RmsProp_beta = 0.5, RmsProp_alpha = 0.66;
+	Real Adagrad_beta = 0.99;
+	Real AdaMax_beta1 = 0.5, AdaMax_beta2 = 0.56, AdaMax_gamma = 0.337;
+	Real Adadelta_beta = 0.6;
+	Real Nadam_beta1 = 0.96, Nadam_beta2 = 0.98, Nadam_gamma = 0.4;
+	Real AMSGrad_beta1 = 0.84, AMSGrad_beta2 = 0.74, AMSGrad_gamma = 1.15;
 	Real Nesterov_ro = 2.0, Nesterov_teta = 1.1, Nesterov_alfa = 1.0;
 	
 	/*
